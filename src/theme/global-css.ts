@@ -1,23 +1,23 @@
-import { defineGlobalStyles } from '@pandacss/dev'
+import { defineGlobalStyles } from "@pandacss/dev";
 
 export const globalCss = defineGlobalStyles({
   extend: {
-    '*, *::before, *::after': {
-      borderColor: 'gray.a4',
+    "*, *::before, *::after": {
+      borderColor: "gray.a4",
     },
-    '*::selection': {
-      bg: 'colorPalette.a3',
+    "*::selection": {
+      bg: "colorPalette.a3",
     },
-    '*::placeholder': {
+    "*::placeholder": {
       opacity: 1,
-      color: 'fg.subtle',
+      color: "fg.subtle",
     },
     html: {
-      colorPalette: 'gray',
+      colorPalette: "gray",
     },
     body: {
-      background: 'gray.1',
-      color: 'fg.default',
+      background: "gray.1",
+      color: "fg.default",
     },
   },
-})
+});

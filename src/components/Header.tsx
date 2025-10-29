@@ -81,8 +81,7 @@ export const Header = () => {
           defaultOpen={false}
           lazyMount
           navigate={(details) => router.push(details.href)}
-          onOpenChange={() => setIsMenuOpen(!isMenuOpen)}
-        >
+          onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
           <Menu.Trigger asChild>
             <IconButton
               variant="surface"
@@ -92,7 +91,9 @@ export const Header = () => {
           </Menu.Trigger>
           <Portal>
             <Menu.Positioner>
-              <Menu.Content background="white" padding={6}>
+              <Menu.Content
+                background="white"
+                padding={6}>
                 <Menu.Item
                   asChild
                   value="results">

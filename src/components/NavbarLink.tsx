@@ -15,13 +15,12 @@ export const NavbarLink = ({ href, text }: Props) => {
       transition="all 300ms ease-in-out"
       _hover={{
         color: {
-          _light: 'indigo.600',
-          _dark: 'indigo.400'
-        }
+          _light: "indigo.600",
+          _dark: "indigo.400",
+        },
       }}
-      variant="plain"
-    >
+      variant="plain">
       <NextLink href={href}>{text}</NextLink>
-    </Link >
+    </Link>
   );
 };

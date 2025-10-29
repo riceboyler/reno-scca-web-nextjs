@@ -26,9 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="color-scheme" content="dark light" />
+        <meta
+          name="color-scheme"
+          content="dark light"
+        />
       </head>
-      <body className={`${nunito.variable} ${oswald.variable}`} >
+      <body className={`${nunito.variable} ${oswald.variable}`}>
         <Header />
         {children}
       </body>

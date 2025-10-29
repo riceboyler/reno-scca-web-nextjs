@@ -1,1 +1,1 @@
-export * as Menu from './ui/menu';
+export * as Menu from "./ui/menu";
