@@ -9,6 +9,7 @@ html {
 }
 
 body {
+  /* biome-ignore lint/complexity/noImportantStyles: Necessary to override Mantine's body background-color */
   background-color: var(--colors-indigo-a12) !important;
 }
 
