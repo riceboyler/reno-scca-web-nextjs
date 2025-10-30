@@ -39,6 +39,14 @@ export default defineConfig({
         colors: colors,
         durations: durations,
         zIndex: zIndex,
+        fonts: {
+          body: {
+            value: '"Nunito", sans-serif'
+          },
+          header: {
+            value: '"Oswald", sans-serif'
+          }
+        }
       },
 
       semanticTokens: {

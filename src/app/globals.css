@@ -3,3 +3,15 @@
 :root {
   color-scheme: dark light;
 }
+
+html {
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background-color: var(--colors-indigo-a12) !important;
+}
+
+p {
+  margin-bottom: 16px;
+}

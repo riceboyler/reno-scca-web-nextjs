@@ -22,9 +22,12 @@
     "@tiptap/pm": "^3.9.1",
     "@tiptap/react": "^3.9.1",
     "@tiptap/starter-kit": "^3.9.1",
+    "@types/mssql": "^9.1.8",
+    "dayjs": "^1.11.18",
     "embla-carousel": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
     "lucide-react": "^0.548.0",
+    "mssql": "^12.0.0",
     "next": "16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
@@ -36,6 +39,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "postcss-preset-mantine": "^1.18.0",
+    "postcss-simple-vars": "^7.0.1",
     "typescript": "^5"
   }
 }
