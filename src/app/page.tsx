@@ -11,43 +11,44 @@ import { getApiUrl } from "@/helpers/apiUrl";
 
 const apiUrl = getApiUrl();
 
-const getQuicklinks = async () => {
-  const response = await fetch(`${apiUrl}api/quicklinks`);
-  if (response) {
-    return await response.json();
-  }
-  throw new Error("Error while retrieving quick links");
-};
+// const getQuicklinks = async () => {
+//   const response = await fetch(`${apiUrl}api/quicklinks`);
+//   if (response) {
+//     return await response.json();
+//   }
+//   throw new Error("Error while retrieving quick links");
+// };
 
-const getHomeContent = async () => {
-  const response = await fetch(`${apiUrl}api/homeContent`);
-  if (response) {
-    return await response.json();
-  }
-  throw new Error("Error while fetching home content");
-};
+// const getHomeContent = async () => {
+//   const response = await fetch(`${apiUrl}api/homeContent`);
+//   if (response) {
+//     return await response.json();
+//   }
+//   throw new Error("Error while fetching home content");
+// };
 
-const getHomeEvents = async () => {
-  const response = await fetch(`${apiUrl}api/homeEvents`);
-  if (response) {
-    return await response.json();
-  }
-  throw new Error("Error while fetching events");
-};
+// const getHomeEvents = async () => {
+//   const response = await fetch(`${apiUrl}api/homeEvents`);
+//   if (response) {
+//     return await response.json();
+//   }
+//   throw new Error("Error while fetching events");
+// };
 
-const getProgramPages = async () => {
-  const response = await fetch(`${apiUrl}api/homePrograms`);
-  if (response) {
-    return await response.json();
-  }
-  throw new Error("Error while fetching events");
-};
+// const getProgramPages = async () => {
+//   const response = await fetch(`${apiUrl}api/homePrograms`);
+//   if (response) {
+//     return await response.json();
+//   }
+//   throw new Error("Error while fetching events");
+// };
 
 export default async function Home() {
-  const quickLinks: QuickLinkModel[] = await getQuicklinks();
-  const homeContent: HomeContentModel[] = await getHomeContent();
-  const upcomingEvents: ScheduledEventModel[] = await getHomeEvents();
-  const programPages: ProgramPageModel[] = await getProgramPages();
+  console.log("env", process.env.NODE_ENV);
+  const quickLinks: QuickLinkModel[] = [];
+  const homeContent: HomeContentModel[] = [];
+  const upcomingEvents: ScheduledEventModel[] = [];
+  const programPages: ProgramPageModel[] = [];
   return (
     <VStack>
       <Box
