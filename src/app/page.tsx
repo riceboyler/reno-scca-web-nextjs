@@ -78,8 +78,9 @@ export default async function Home() {
         direction={{ base: "column", md: "row" }}
         gap="8">
         <Box
-          position="sticky"
-          top="80px">
+          position={{ base: "relative", md: "sticky" }}
+          top={{ base: "0", md: "80px" }}
+        >
           <QuickLinks quickLinks={quickLinks} />
         </Box>
         <VStack gap="5">

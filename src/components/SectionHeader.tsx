@@ -11,12 +11,14 @@ export const SectionHeader = ({ children }: Props) => {
       fontFamily="Oswald"
       fontSize="4xl"
       bgLinear="to-br"
-      gradientFrom="slate.500"
-      gradientTo="slate.800"
-      color="white"
+      gradientFrom="indigo.3"
+      gradientTo="indigo.9"
+      color="fg.default"
       textTransform="uppercase"
       textAlign="center"
       padding="2"
+      border="outline"
+      borderWidth="0 2px 2px 0"
     >
       {children}
     </Box>

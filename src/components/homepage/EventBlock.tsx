@@ -14,17 +14,21 @@ export const EventBlock = ({ type, events }: Props) => {
   const programEvents = events.filter((event) => event.Program === type);
   return (
     <Box
-      border="solid 1px black"
+      border="solid 1px"
+      borderColor="indigo.indigo.5"
       width="100%"
       borderRadius="lg"
       overflow="hidden">
       <Box
-        backgroundColor="slate.400"
+        backgroundColor="indigo.6"
         fontFamily="header"
         fontSize="3xl"
-        color="black"
-        textAlign="center">
-        {type}
+        color="fg.default"
+        textAlign="center"
+      >
+        <Link href={`#${type}`}>
+          {type}
+        </Link>
       </Box>
       <Box padding="2">
         {programEvents.length === 0 ? (
@@ -41,6 +45,10 @@ export const EventBlock = ({ type, events }: Props) => {
               {event.Link && (
                 <Box marginY="1">
                   <PandaLink
+                    color="indigo.10"
+                    _hover={{
+                      color: 'indigo.12'
+                    }}
                     asChild>
                     <Link
                       target="_blank"
