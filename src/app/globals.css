@@ -23,6 +23,10 @@ ul > li {
   list-style-position: inside;
 }
 
+a {
+  color: var(--colors-indigo-11);
+}
+
 a:hover {
   color: var(--colors-indigo-10);
 }
