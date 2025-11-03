@@ -3,10 +3,7 @@ import type { ConditionalValue } from '../types/index';
 import type { DistributiveOmit, Pretty } from '../types/system-types';
 
 interface LinkVariant {
-  /**
- * @default "underline"
- */
-variant: "underline" | "plain"
+  
 }
 
 type LinkVariantMap = {

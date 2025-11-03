@@ -1,99 +1,46 @@
-"use client";
-import { ark } from "@ark-ui/react/factory";
-import { createContext, mergeProps } from "@ark-ui/react/utils";
-import { type ComponentProps, forwardRef, useMemo } from "react";
-import { styled } from "styled-system/jsx";
-import { type ButtonVariantProps, button } from "styled-system/recipes";
-import { Group, type GroupProps } from "./group";
-import { Loader } from "./loader";
+import { forwardRef } from 'react';
+import { Center, styled } from 'styled-system/jsx';
+import { Spinner } from './spinner';
+import { Button as StyledButton, type ButtonProps as StyledButtonProps } from './styled/button';
 
 interface ButtonLoadingProps {
-  /**
-   * If `true`, the button will show a loading spinner.
-   * @default false
-   */
-  loading?: boolean | undefined;
-  /**
-   * The text to show while loading.
-   */
-  loadingText?: React.ReactNode | undefined;
-  /**
-   * The spinner to show while loading.
-   */
-  spinner?: React.ReactNode | undefined;
-  /**
-   * The placement of the spinner
-   * @default "start"
-   */
-  spinnerPlacement?: "start" | "end" | undefined;
+  loading?: boolean;
+  loadingText?: React.ReactNode;
 }
 
-type BaseButtonProps = ComponentProps<typeof BaseButton>;
-const BaseButton = styled(ark.button, button);
+export interface ButtonProps extends StyledButtonProps, ButtonLoadingProps { }
 
-export interface ButtonProps extends BaseButtonProps, ButtonLoadingProps {}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const { loading, disabled, loadingText, children, ...rest } = props;
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  function Button(props, ref) {
-    const propsContext = useButtonPropsContext();
-    const buttonProps = useMemo(
-      () => mergeProps<ButtonProps>(propsContext, props),
-      [propsContext, props]
-    );
+  const trulyDisabled = loading || disabled;
 
-    const {
-      loading,
-      loadingText,
-      children,
-      spinner,
-      spinnerPlacement,
-      ...rest
-    } = buttonProps;
-    return (
-      <BaseButton
-        type="button"
-        ref={ref}
-        {...rest}
-        data-loading={loading ? "" : undefined}
-        disabled={loading || rest.disabled}>
-        {!props.asChild && loading ? (
-          <Loader
-            spinner={spinner}
-            text={loadingText}
-            spinnerPlacement={spinnerPlacement}>
-            {children}
-          </Loader>
-        ) : (
-          children
-        )}
-      </BaseButton>
-    );
-  }
+  return (
+    <StyledButton disabled={trulyDisabled} ref={ref} {...rest}>
+      {loading && !loadingText ? (
+        <>
+          <ButtonSpinner />
+          <styled.span opacity={0}>{children}</styled.span>
+        </>
+      ) : loadingText ? (
+        loadingText
+      ) : (
+        children
+      )}
+    </StyledButton>
+  );
+});
+
+Button.displayName = 'Button';
+
+const ButtonSpinner = () => (
+  <Center inline position="absolute" transform="translate(-50%, -50%)" top="50%" insetStart="50%">
+    <Spinner
+      width="1.1em"
+      height="1.1em"
+      borderWidth="1.5px"
+      borderTopColor="fg.disabled"
+      borderRightColor="fg.disabled"
+    />
+  </Center>
 );
-
-export interface ButtonGroupProps extends GroupProps, ButtonVariantProps {}
-
-export const ButtonGroup = forwardRef<HTMLDivElement, ButtonGroupProps>(
-  function ButtonGroup(props, ref) {
-    const [variantProps, otherProps] = useMemo(
-      () => button.splitVariantProps(props),
-      [props]
-    );
-    return (
-      <ButtonPropsProvider value={variantProps}>
-        <Group
-          ref={ref}
-          {...otherProps}
-        />
-      </ButtonPropsProvider>
-    );
-  }
-);
-
-const [ButtonPropsProvider, useButtonPropsContext] =
-  createContext<ButtonVariantProps>({
-    name: "ButtonPropsContext",
-    hookName: "useButtonPropsContext",
-    providerName: "<PropsProvider />",
-    strict: false,
-  });

@@ -5,3 +5,4 @@ import { link } from "styled-system/recipes";
 
 export type LinkProps = ComponentProps<typeof Link>;
 export const Link = styled(ark.a, link);
+export const PandaLink = Link;

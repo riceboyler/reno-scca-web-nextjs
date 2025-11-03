@@ -551,7 +551,7 @@ appearance?: ConditionalValue<CssVars | CssProperties["appearance"] | AnyString>
    *
    * @see https://developer.mozilla.org/docs/Web/CSS/aspect-ratio
    */
-aspectRatio?: ConditionalValue<UtilityValues["aspectRatio"] | CssVars | CssProperties["aspectRatio"] | AnyString>
+aspectRatio?: ConditionalValue<CssProperties["aspectRatio"] | AnyString>
  /**
    * The **`backdrop-filter`** CSS property lets you apply graphical effects such as blurring or color shifting to the area behind an element. Because it applies to everything _behind_ the element, to see the effect you must make the element or its background at least partially transparent.
    *
@@ -7501,6 +7501,4 @@ scrollSnapMarginRight?: ConditionalValue<UtilityValues["scrollSnapMarginRight"] 
  debug?: ConditionalValue<UtilityValues["debug"] | CssVars | AnyString>
  colorPalette?: ConditionalValue<UtilityValues["colorPalette"] | CssVars | AnyString>
  textStyle?: ConditionalValue<UtilityValues["textStyle"] | CssVars | AnyString>
- layerStyle?: ConditionalValue<UtilityValues["layerStyle"] | CssVars | AnyString>
- animationStyle?: ConditionalValue<UtilityValues["animationStyle"] | CssVars | AnyString>
 }

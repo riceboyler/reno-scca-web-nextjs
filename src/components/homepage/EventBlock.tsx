@@ -1,8 +1,8 @@
-'use client';
-import { Anchor } from "@mantine/core";
+"use client";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { Box } from "styled-system/jsx";
+import { Link as PandaLink } from "@/components/ui/link";
 import type { ScheduledEventModel } from "@/db/models/ScheduledEvent.model";
 
 type Props = {
@@ -14,17 +14,21 @@ export const EventBlock = ({ type, events }: Props) => {
   const programEvents = events.filter((event) => event.Program === type);
   return (
     <Box
-      border="solid 1px black"
+      border="solid 1px"
+      borderColor="indigo.indigo.5"
       width="100%"
       borderRadius="lg"
       overflow="hidden">
       <Box
-        backgroundColor="slate.400"
+        backgroundColor="indigo.6"
         fontFamily="header"
         fontSize="3xl"
-        color="black"
-        textAlign="center">
-        {type}
+        color="fg.default"
+        textAlign="center"
+      >
+        <Link href={`#${type}`}>
+          {type}
+        </Link>
       </Box>
       <Box padding="2">
         {programEvents.length === 0 ? (
@@ -40,13 +44,18 @@ export const EventBlock = ({ type, events }: Props) => {
               {event.Location}
               {event.Link && (
                 <Box marginY="1">
-                  <Anchor
-                    component={Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={event.Link}>
-                    More Info
-                  </Anchor>
+                  <PandaLink
+                    color="indigo.10"
+                    _hover={{
+                      color: 'indigo.12'
+                    }}
+                    asChild>
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer" href={event.Link}>
+                      More Info
+                    </Link>
+                  </PandaLink>
                 </Box>
               )}
             </Box>

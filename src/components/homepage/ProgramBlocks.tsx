@@ -10,7 +10,7 @@ export const ProgramBlocks = ({ pages }: Props) => {
   return (
     <Box>
       {pages.map((page) => (
-        <Box key={`page-${page.ID}`}>
+        <Box key={`page-${page.ID}`} id={page.Program}>
           <SectionHeader>{page.Program}</SectionHeader>
           <Box
             marginY="2"
