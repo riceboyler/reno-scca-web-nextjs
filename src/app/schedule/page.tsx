@@ -78,7 +78,7 @@ const SchedulePage = async () => {
                 padding="2">
                 <Box fontFamily="header">{event.Program}</Box>
                 <Box>
-                  {dayjs(event.Date).add(1, "days").format("M/DD/YYYY")}
+                  {dayjs(event.Date).format("M/DD/YYYY")}
                 </Box>
               </HStack>
               <Box
