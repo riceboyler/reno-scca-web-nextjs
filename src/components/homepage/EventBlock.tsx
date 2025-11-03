@@ -1,8 +1,8 @@
-'use client';
-import { Anchor } from "@mantine/core";
+"use client";
 import dayjs from "dayjs";
 import Link from "next/link";
 import { Box } from "styled-system/jsx";
+import { Link as PandaLink } from "@/components/ui/link";
 import type { ScheduledEventModel } from "@/db/models/ScheduledEvent.model";
 
 type Props = {
@@ -40,13 +40,14 @@ export const EventBlock = ({ type, events }: Props) => {
               {event.Location}
               {event.Link && (
                 <Box marginY="1">
-                  <Anchor
-                    component={Link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={event.Link}>
-                    More Info
-                  </Anchor>
+                  <PandaLink
+                    asChild>
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer" href={event.Link}>
+                      More Info
+                    </Link>
+                  </PandaLink>
                 </Box>
               )}
             </Box>

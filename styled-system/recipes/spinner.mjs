@@ -7,13 +7,11 @@ const spinnerFn = /* @__PURE__ */ createRecipe('spinner', {
 
 const spinnerVariantMap = {
   "size": [
-    "inherit",
     "xs",
     "sm",
     "md",
     "lg",
-    "xl",
-    "2xl"
+    "xl"
   ]
 }
 

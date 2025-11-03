@@ -9,10 +9,10 @@ const buttonFn = /* @__PURE__ */ createRecipe('button', {
 const buttonVariantMap = {
   "variant": [
     "solid",
-    "surface",
-    "subtle",
     "outline",
-    "plain"
+    "ghost",
+    "link",
+    "subtle"
   ],
   "size": [
     "xs",

@@ -1,7 +1,8 @@
 "use client";
-import { Anchor, List } from "@mantine/core";
+import { LucideArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Box, Stack } from "styled-system/jsx";
+import { PandaLink } from "@/components/ui/link";
 import type { QuickLinkModel } from "@/db/models/QuickLink.model";
 
 type Props = {
@@ -10,34 +11,33 @@ type Props = {
 
 export const QuickLinks = ({ quickLinks }: Props) => {
   return (
-    <Box position="sticky" top="10px" minWidth="375px">
+    <Box
+      position={{ base: "relative", md: "sticky" }}
+      top="10px"
+      minWidth="350px">
       <Box
         border="solid 1px"
         borderColor="slate.400"
         borderRadius="lg"
-        overflow="hidden"
-      >
+        overflow="hidden">
         <Box
           p="2"
-          backgroundColor="indigo.100"
+          backgroundColor="var(--card-background)"
           fontFamily="Oswald"
           fontSize="2xl"
           textTransform="uppercase"
-          textAlign="center"
-        >
+          textAlign="center">
           Quick Links
         </Box>
         <Box
-          backgroundColor="white"
+          backgroundColor="var(--card-background)"
           p="2">
-          <List listStyleType="disc">
-            {quickLinks.map((link) => (
-              <QuickLink
-                key={link.ID}
-                quickLink={link}
-              />
-            ))}
-          </List>
+          {quickLinks.map((link) => (
+            <QuickLink
+              key={link.ID}
+              quickLink={link}
+            />
+          ))}
         </Box>
       </Box>
     </Box>
@@ -50,15 +50,17 @@ type QuickLinkProps = {
 
 const QuickLink = ({ quickLink }: QuickLinkProps) => {
   return (
-    <List.Item>
-      <Anchor
-        component={Link}
-        href={quickLink.Link}
+    <PandaLink asChild>
+      <Stack
+        display="inline-flex"
+        direction="row"
+        alignItems="flex-start"
       >
-        <Stack direction="row" alignItems="center">
-          {quickLink.LinkText}
-        </Stack>
-      </Anchor>
-    </List.Item>
+        <Box marginTop="4px">
+          <LucideArrowRight size="1rem" />
+        </Box>
+        <Link href={quickLink.Link}>{quickLink.LinkText}</Link>
+      </Stack>
+    </PandaLink>
   );
 };

@@ -6,7 +6,7 @@ interface ButtonVariant {
   /**
  * @default "solid"
  */
-variant: "solid" | "surface" | "subtle" | "outline" | "plain"
+variant: "solid" | "outline" | "ghost" | "link" | "subtle"
 /**
  * @default "md"
  */

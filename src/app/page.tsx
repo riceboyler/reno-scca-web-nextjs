@@ -51,23 +51,27 @@ export default async function Home() {
   return (
     <VStack>
       <Box
-        fontSize="3xl"
+        fontSize={{ base: "xl", md: "3xl" }}
         fontFamily="Oswald"
-        fontWeight="bold">
+        fontWeight="bold"
+        textAlign="center"
+      >
         Welcome to the Reno Region of the Sports Car Club of America(SCCA)!
       </Box>
-      <video
-        loop
-        autoPlay
-        muted
-        playsInline
-        preload="auto"
-        style={{ maxWidth: "1200px" }}>
-        <source
-          src="videos/movie.webm"
-          type="video/webm"
-        />
-      </video>
+      <Box width="100%" height="100%" borderRadius="xl" border="solid 5px" overflow="hidden">
+        <video
+          loop
+          autoPlay
+          muted
+          playsInline
+          preload="auto"
+          style={{ maxWidth: "1200px", width: "100%" }}>
+          <source
+            src="videos/movie.webm"
+            type="video/webm"
+          />
+        </video>
+      </Box>
       <Stack
         position="relative"
         fontFamily="Nunito"

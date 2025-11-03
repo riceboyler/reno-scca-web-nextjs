@@ -11,15 +11,13 @@ export const NavbarLink = ({ href, text }: Props) => {
     <Link
       asChild
       fontFamily="Oswald"
-      fontSize="2xl"
+      fontSize={{ base: "xl", md: "md", lg: "2xl" }}
       transition="all 300ms ease-in-out"
+      color="var(--colors-indigo-12)"
       _hover={{
-        color: {
-          _light: "indigo.600",
-          _dark: "indigo.400",
-        },
+        color: "var(--colors-indigo-10)"
       }}
-      variant="plain">
+    >
       <NextLink href={href}>{text}</NextLink>
     </Link>
   );

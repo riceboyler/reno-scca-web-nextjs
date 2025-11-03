@@ -1,18 +1,27 @@
 @layer reset, base, tokens, recipes, utilities;
 
 :root {
-  color-scheme: dark light;
+  --background: var(--colors-indigo-3);
+  --foreground: var(--colors-indigo-12);
 }
 
 html {
   font-family: 'Nunito', sans-serif;
 }
-
 body {
-  /* biome-ignore lint/complexity/noImportantStyles: Necessary to override Mantine's body background-color */
-  background-color: var(--colors-indigo-a12) !important;
+  color: var(--foreground);
 }
 
 p {
   margin-bottom: 16px;
+}
+
+ul > li {
+  display: list-item;
+  list-style-type: ">";
+  list-style-position: inside;
+}
+
+a:hover {
+  color: var(--colors-indigo-10);
 }

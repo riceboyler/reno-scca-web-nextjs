@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Nunito, Oswald } from "next/font/google";
 import "./globals.css";
-import "@mantine/core/styles.css";
-import {
-  ColorSchemeScript,
-  MantineProvider,
-  mantineHtmlProps,
-} from "@mantine/core";
+import { ThemeProvider } from "next-themes";
 import { Box } from "styled-system/jsx";
 import { Header } from "@/components/Header";
 
@@ -33,29 +28,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      {...mantineHtmlProps}>
+      suppressHydrationWarning>
       <head>
-        <ColorSchemeScript />
         <meta
           name="color-scheme"
-          content="dark light"
+          content="light dark"
         />
       </head>
-      <body className={`${nunito.variable} ${oswald.variable}`}>
-        <MantineProvider>
+      <body
+        className={`${nunito.variable} ${oswald.variable}`}
+        style={{ background: "var(--background)" }}>
+        <ThemeProvider attribute="class">
           <Box
             p="2"
-            backgroundColor="white"
-            border="solid 2px"
-            borderColor="indigo.900"
-            maxWidth="1250px"
+            backgroundColor="var(--background)"
+            maxWidth="1200px"
             margin="0 auto"
-            minHeight="80vh"
-          >
+            minHeight="80vh">
             <Header />
             {children}
           </Box>
-        </MantineProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
