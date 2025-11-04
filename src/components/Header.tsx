@@ -1,6 +1,7 @@
 "use client";
 import { Portal } from "@ark-ui/react";
 import { Menu as MenuIcon, X } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Stack } from "styled-system/jsx";
@@ -42,7 +43,9 @@ export const Header = () => {
           href="/docs"
           text="Club Docs"
         />
-        <LightDarkLogo />
+        <Link href="/">
+          <LightDarkLogo />
+        </Link>
         <NavbarLink
           href="/events"
           text="Our Events"
@@ -65,7 +68,9 @@ export const Header = () => {
         maxWidth="100%"
         padding="4">
         <ColorSchemeToggle />
-        <LightDarkLogo />
+        <Link href="/">
+          <LightDarkLogo />
+        </Link>
         <Stack
           direction="row"
           gap="2"
