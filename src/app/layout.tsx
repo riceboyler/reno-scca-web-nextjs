@@ -38,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} ${oswald.variable}`}
         style={{ background: "var(--background)" }}>
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <Box
             p="2"
             backgroundColor="var(--background)"
