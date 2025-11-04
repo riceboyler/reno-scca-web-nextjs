@@ -16,7 +16,8 @@ export const NavbarLink = ({ href, text }: Props) => {
       color="var(--colors-indigo-12)"
       _hover={{
         color: "var(--colors-indigo-10)",
-      }}>
+      }}
+    >
       <NextLink href={href}>{text}</NextLink>
     </Link>
   );

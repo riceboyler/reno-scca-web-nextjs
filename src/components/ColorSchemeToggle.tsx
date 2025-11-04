@@ -20,7 +20,8 @@ export function ColorSchemeToggle() {
       css={{
         color: "fg.muted",
         _hover: { color: "fg.default" },
-      }}>
+      }}
+    >
       {theme === "light" ? <Sun size={20} /> : <Moon size={20} />}
     </IconButton>
   );

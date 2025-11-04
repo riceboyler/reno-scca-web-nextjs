@@ -18,7 +18,8 @@ export const UpcomingEvents = ({ events }: Props) => {
           gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
           flexWrap="wrap"
           marginY="2"
-          gap="4">
+          gap="4"
+        >
           <EventBlock
             type="Solo"
             events={events}

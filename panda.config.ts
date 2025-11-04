@@ -6,9 +6,7 @@ import slate from "@park-ui/panda-preset/colors/slate";
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
-  presets: [
-    createPreset({ accentColor: indigo, grayColor: slate, radius: "lg" }),
-  ],
+  presets: [createPreset({ accentColor: indigo, grayColor: slate, radius: "lg" })],
 
   // Where to look for your css declarations
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],

@@ -28,7 +28,8 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      suppressHydrationWarning>
+      suppressHydrationWarning
+    >
       <head>
         <meta
           name="color-scheme"
@@ -37,16 +38,19 @@ export default function RootLayout({
       </head>
       <body
         className={`${nunito.variable} ${oswald.variable}`}
-        style={{ background: "var(--background)" }}>
+        style={{ background: "var(--background)" }}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark">
+          defaultTheme="dark"
+        >
           <Box
             p="2"
             backgroundColor="var(--background)"
             maxWidth="1200px"
             margin="0 auto"
-            minHeight="80vh">
+            minHeight="80vh"
+          >
             <Header />
             {children}
           </Box>

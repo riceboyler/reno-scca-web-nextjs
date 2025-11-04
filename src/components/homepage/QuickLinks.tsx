@@ -14,24 +14,28 @@ export const QuickLinks = ({ quickLinks }: Props) => {
     <Box
       position={{ base: "relative", md: "sticky" }}
       top="10px"
-      minWidth="350px">
+      minWidth="350px"
+    >
       <Box
         border="solid 1px"
         borderColor="slate.400"
         borderRadius="lg"
-        overflow="hidden">
+        overflow="hidden"
+      >
         <Box
           p="2"
           backgroundColor="var(--card-background)"
           fontFamily="Oswald"
           fontSize="2xl"
           textTransform="uppercase"
-          textAlign="center">
+          textAlign="center"
+        >
           Quick Links
         </Box>
         <Box
           backgroundColor="var(--card-background)"
-          p="2">
+          p="2"
+        >
           {quickLinks.map((link) => (
             <QuickLink
               key={link.ID}
@@ -54,7 +58,8 @@ const QuickLink = ({ quickLink }: QuickLinkProps) => {
       <Stack
         display="inline-flex"
         direction="row"
-        alignItems="flex-start">
+        alignItems="flex-start"
+      >
         <Box marginTop="4px">
           <LucideArrowRight size="1rem" />
         </Box>

@@ -7,9 +7,7 @@ export const LightDarkLogo = () => {
   const common = { alt: "Reno SCCA Logo", sizes: "100vw" };
 
   const imgSrc =
-    theme === "light"
-      ? "/images/reno_scca_logo_transparent.png"
-      : "/images/reno_scca_logo_inverted_white_text.png";
+    theme === "light" ? "/images/reno_scca_logo_transparent.png" : "/images/reno_scca_logo_inverted_white_text.png";
   return (
     <Image
       src={imgSrc}

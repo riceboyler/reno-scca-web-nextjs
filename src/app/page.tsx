@@ -54,7 +54,8 @@ export default async function Home() {
         fontSize={{ base: "xl", md: "3xl" }}
         fontFamily="Oswald"
         fontWeight="bold"
-        textAlign="center">
+        textAlign="center"
+      >
         Welcome to the Reno Region of the Sports Car Club of America(SCCA)!
       </Box>
       <Box
@@ -62,14 +63,16 @@ export default async function Home() {
         height="100%"
         borderRadius="xl"
         border="solid 5px"
-        overflow="hidden">
+        overflow="hidden"
+      >
         <video
           loop
           autoPlay
           muted
           playsInline
           preload="auto"
-          style={{ maxWidth: "1200px", width: "100%" }}>
+          style={{ maxWidth: "1200px", width: "100%" }}
+        >
           <source
             src="videos/movie.webm"
             type="video/webm"
@@ -80,10 +83,12 @@ export default async function Home() {
         position="relative"
         fontFamily="Nunito"
         direction={{ base: "column", md: "row" }}
-        gap="8">
+        gap="8"
+      >
         <Box
           position={{ base: "relative", md: "sticky" }}
-          top={{ base: "0", md: "80px" }}>
+          top={{ base: "0", md: "80px" }}
+        >
           <QuickLinks quickLinks={quickLinks} />
         </Box>
         <VStack gap="5">
