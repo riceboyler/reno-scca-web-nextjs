@@ -23,8 +23,14 @@ const SchedulePage = async () => {
     <>
       <SectionHeader>Schedule (upcoming events)</SectionHeader>
       {upcomingEvents?.length === 0 && (
-        <Box fontFamily="body" fontSize={{ base: "2xl", md: "4xl" }} textAlign="center" my="8">
-          There are currently no upcoming events scheduled. Please check back closer to the start of the season (late February/early March).
+        <Box
+          fontFamily="body"
+          fontSize={{ base: "2xl", md: "4xl" }}
+          textAlign="center"
+          my="8"
+        >
+          There are currently no upcoming events scheduled. Please check back closer to the start of the season (late
+          February/early March).
         </Box>
       )}
       {upcomingEvents?.map((event) => {
@@ -49,13 +55,15 @@ const SchedulePage = async () => {
             gap={8}
             mt={8}
             mb={12}
-            width="100%">
+            width="100%"
+          >
             <Box
               borderRadius="2xl"
               width={{ base: "100px", md: "200px" }}
               height={{ base: "100px", md: "200px" }}
               overflow="hidden"
-              minWidth={{ base: "100px", md: "200px" }}>
+              minWidth={{ base: "100px", md: "200px" }}
+            >
               <Image
                 src={eventImage}
                 alt="Program Icon"
@@ -66,7 +74,8 @@ const SchedulePage = async () => {
             <VStack
               justifyContent="flex-start"
               alignItems="flex-start"
-              width="100%">
+              width="100%"
+            >
               <HStack
                 width="100%"
                 justifyContent="space-between"
@@ -75,11 +84,10 @@ const SchedulePage = async () => {
                 backgroundGradient="to-b"
                 gradientFrom="indigo.6"
                 gradientTo="indigo.3"
-                padding="2">
+                padding="2"
+              >
                 <Box fontFamily="header">{event.Program}</Box>
-                <Box>
-                  {dayjs(event.Date).format("M/DD/YYYY")}
-                </Box>
+                <Box>{dayjs(event.Date).format("M/DD/YYYY")}</Box>
               </HStack>
               <Box
                 fontFamily="body"
@@ -90,7 +98,10 @@ const SchedulePage = async () => {
               </Box>
               {event.Link && (
                 <Box>
-                  <PandaLink asChild fontSize={{ base: "sm", md: "xl" }}>
+                  <PandaLink
+                    asChild
+                    fontSize={{ base: "sm", md: "xl" }}
+                  >
                     <Link href={event.Link}>Register at MotorsportReg by clicking here</Link>
                   </PandaLink>
                 </Box>

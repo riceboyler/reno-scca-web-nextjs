@@ -15,7 +15,7 @@ export const NavbarLink = ({ href, text }: Props) => {
       transition="all 300ms ease-in-out"
       color="var(--colors-indigo-12)"
       _hover={{
-        color: "var(--colors-indigo-10)"
+        color: "var(--colors-indigo-10)",
       }}
     >
       <NextLink href={href}>{text}</NextLink>

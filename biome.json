@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,21 +7,15 @@
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": [
-      "**",
-      "!node_modules",
-      "!.next",
-      "!dist",
-      "!build",
-      "!styled-system"
-    ]
+    "includes": ["**", "!node_modules", "!.next", "!dist", "!build", "!styled-system", "!.vscode"]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
     "attributePosition": "multiline",
-    "formatWithErrors": true
+    "formatWithErrors": true,
+    "lineWidth": 120
   },
   "javascript": {
     "assist": {
@@ -30,7 +24,7 @@
     "formatter": {
       "arrowParentheses": "always",
       "attributePosition": "multiline",
-      "bracketSameLine": true,
+      "bracketSameLine": false,
       "bracketSpacing": true,
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
@@ -46,10 +40,34 @@
         "noUnusedImports": "error",
         "noUnusedFunctionParameters": "warn",
         "noUnusedVariables": "error",
-        "useHookAtTopLevel": "error"
+        "useHookAtTopLevel": "error",
+        "useExhaustiveDependencies": "error"
+      },
+      "style": {
+        "noYodaExpression": "error",
+        "useSelfClosingElements": "warn",
+        "useConsistentCurlyBraces": "error",
+        "useBlockStatements": "error",
+        "useConsistentTypeDefinitions": {
+          "options": {
+            "style": "type"
+          },
+          "level": "error",
+          "fix": "unsafe"
+        },
+        "useLiteralEnumMembers": "warn"
       },
       "a11y": {
         "useMediaCaption": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtmlWithChildren": "error"
+      },
+      "suspicious": {
+        "noAlert": "warn",
+        "noConsole": "warn",
+        "noEmptyBlockStatements": "error",
+        "noEmptyBlock": "error"
       }
     },
     "domains": {

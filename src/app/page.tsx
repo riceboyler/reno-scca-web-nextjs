@@ -44,10 +44,10 @@ const getProgramPages = async () => {
 };
 
 export default async function Home() {
-  const quickLinks: QuickLinkModel[] = await getQuicklinks() ?? [];
-  const homeContent: HomeContentModel[] = await getHomeContent() ?? [];
-  const upcomingEvents: ScheduledEventModel[] = await getHomeEvents() ?? [];
-  const programPages: ProgramPageModel[] = await getProgramPages() ?? [];
+  const quickLinks: QuickLinkModel[] = (await getQuicklinks()) ?? [];
+  const homeContent: HomeContentModel[] = (await getHomeContent()) ?? [];
+  const upcomingEvents: ScheduledEventModel[] = (await getHomeEvents()) ?? [];
+  const programPages: ProgramPageModel[] = (await getProgramPages()) ?? [];
   return (
     <VStack>
       <Box
@@ -58,14 +58,21 @@ export default async function Home() {
       >
         Welcome to the Reno Region of the Sports Car Club of America(SCCA)!
       </Box>
-      <Box width="100%" height="100%" borderRadius="xl" border="solid 5px" overflow="hidden">
+      <Box
+        width="100%"
+        height="100%"
+        borderRadius="xl"
+        border="solid 5px"
+        overflow="hidden"
+      >
         <video
           loop
           autoPlay
           muted
           playsInline
           preload="auto"
-          style={{ maxWidth: "1200px", width: "100%" }}>
+          style={{ maxWidth: "1200px", width: "100%" }}
+        >
           <source
             src="videos/movie.webm"
             type="video/webm"
@@ -76,7 +83,8 @@ export default async function Home() {
         position="relative"
         fontFamily="Nunito"
         direction={{ base: "column", md: "row" }}
-        gap="8">
+        gap="8"
+      >
         <Box
           position={{ base: "relative", md: "sticky" }}
           top={{ base: "0", md: "80px" }}

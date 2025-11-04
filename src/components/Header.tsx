@@ -26,7 +26,8 @@ export const Header = () => {
         justifyContent="space-evenly"
         maxWidth="1200px"
         paddingY="10px"
-        maxHeight="120px">
+        maxHeight="120px"
+      >
         <NavbarLink
           href="/schedule"
           text="Schedule"
@@ -66,7 +67,8 @@ export const Header = () => {
         alignItems="center"
         justifyContent="space-between"
         maxWidth="100%"
-        padding="4">
+        padding="4"
+      >
         <ColorSchemeToggle />
         <Link href="/">
           <LightDarkLogo />
@@ -74,16 +76,19 @@ export const Header = () => {
         <Stack
           direction="row"
           gap="2"
-          alignItems="center">
+          alignItems="center"
+        >
           <Menu.Root
             defaultOpen={false}
             lazyMount
             navigate={(details) => router.push(details.href)}
-            onOpenChange={() => setIsMenuOpen(!isMenuOpen)}>
+            onOpenChange={() => setIsMenuOpen(!isMenuOpen)}
+          >
             <Menu.Trigger asChild>
               <IconButton
                 variant="outline"
-                aria-label="Menu">
+                aria-label="Menu"
+              >
                 {isMenuOpen ? <X /> : <MenuIcon />}
               </IconButton>
             </Menu.Trigger>
@@ -91,10 +96,12 @@ export const Header = () => {
               <Menu.Positioner>
                 <Menu.Content
                   background="var(--background)"
-                  padding={6}>
+                  padding={6}
+                >
                   <Menu.Item
                     asChild
-                    value="results">
+                    value="results"
+                  >
                     <NavbarLink
                       href="/results"
                       text="Results"
@@ -102,7 +109,8 @@ export const Header = () => {
                   </Menu.Item>
                   <Menu.Item
                     asChild
-                    value="schedule">
+                    value="schedule"
+                  >
                     <NavbarLink
                       href="/schedule"
                       text="Schedule"
@@ -111,7 +119,8 @@ export const Header = () => {
 
                   <Menu.Item
                     asChild
-                    value="rules">
+                    value="rules"
+                  >
                     <NavbarLink
                       href="/rules"
                       text="Cars & Rules"

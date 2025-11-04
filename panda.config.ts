@@ -6,9 +6,7 @@ import slate from "@park-ui/panda-preset/colors/slate";
 export default defineConfig({
   // Whether to use css reset
   preflight: true,
-  presets: [
-    createPreset({ accentColor: indigo, grayColor: slate, radius: "lg" }),
-  ],
+  presets: [createPreset({ accentColor: indigo, grayColor: slate, radius: "lg" })],
 
   // Where to look for your css declarations
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
@@ -26,17 +24,17 @@ export default defineConfig({
       tokens: {
         fonts: {
           body: {
-            value: 'Nunito, sans-serif'
+            value: "Nunito, sans-serif",
           },
           header: {
-            value: 'Oswald, serif'
-          }
-        }
-      }
-    }
+            value: "Oswald, serif",
+          },
+        },
+      },
+    },
   },
   conditions: {
-    light: '[data-color-mode=light] &',
-    dark: '[data-color-mode=dark] &'
-  }
+    light: "[data-color-mode=light] &",
+    dark: "[data-color-mode=dark] &",
+  },
 });

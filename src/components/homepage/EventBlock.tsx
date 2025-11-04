@@ -18,7 +18,8 @@ export const EventBlock = ({ type, events }: Props) => {
       borderColor="indigo.indigo.5"
       width="100%"
       borderRadius="lg"
-      overflow="hidden">
+      overflow="hidden"
+    >
       <Box
         backgroundColor="indigo.6"
         fontFamily="header"
@@ -26,9 +27,7 @@ export const EventBlock = ({ type, events }: Props) => {
         color="fg.default"
         textAlign="center"
       >
-        <Link href={`#${type}`}>
-          {type}
-        </Link>
+        <Link href={`#${type}`}>{type}</Link>
       </Box>
       <Box padding="2">
         {programEvents.length === 0 ? (
@@ -39,20 +38,23 @@ export const EventBlock = ({ type, events }: Props) => {
               key={`event-${event.ID}`}
               fontWeight="600"
               fontFamily="body"
-              marginBottom="2">
-              {dayjs(event.Date).format("M/DD/YYYY")}: {event.Name} at{" "}
-              {event.Location}
+              marginBottom="2"
+            >
+              {dayjs(event.Date).format("M/DD/YYYY")}: {event.Name} at {event.Location}
               {event.Link && (
                 <Box marginY="1">
                   <PandaLink
                     color="indigo.10"
                     _hover={{
-                      color: 'indigo.12'
+                      color: "indigo.12",
                     }}
-                    asChild>
+                    asChild
+                  >
                     <Link
                       target="_blank"
-                      rel="noopener noreferrer" href={event.Link}>
+                      rel="noopener noreferrer"
+                      href={event.Link}
+                    >
                       More Info
                     </Link>
                   </PandaLink>
