@@ -15,7 +15,7 @@ export const UpcomingEvents = ({ events }: Props) => {
         <Box>No Upcoming Events</Box>
       ) : (
         <Grid
-          gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
+          gridTemplateColumns={{ base: "1fr", md: "repeat(2, 1fr)" }}
           flexWrap="wrap"
           marginY="2"
           gap="4">
@@ -23,9 +23,18 @@ export const UpcomingEvents = ({ events }: Props) => {
             type="Solo"
             events={events}
           />
-          <EventBlock type="Track" events={events} />
-          <EventBlock type="Street Survival" events={events} />
-          <EventBlock type="General" events={events} />
+          <EventBlock
+            type="Track"
+            events={events}
+          />
+          <EventBlock
+            type="Street Survival"
+            events={events}
+          />
+          <EventBlock
+            type="General"
+            events={events}
+          />
         </Grid>
       )}
     </Box>

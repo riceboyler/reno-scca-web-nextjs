@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
+    "lint:fix": "biome check --write",
+    "lint:staged": "biome check --error-on-warnings --no-errors-on-unmatched --staged",
     "format": "biome format --write",
     "prepare": "panda codegen"
   },
@@ -31,6 +33,11 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "babel-plugin-react-compiler": "1.0.0",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "^5.9.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "bun lint:fix && bun lint:staged",
+    "pre-push": "bun format"
   }
 }

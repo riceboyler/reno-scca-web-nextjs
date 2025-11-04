@@ -54,8 +54,7 @@ const QuickLink = ({ quickLink }: QuickLinkProps) => {
       <Stack
         display="inline-flex"
         direction="row"
-        alignItems="flex-start"
-      >
+        alignItems="flex-start">
         <Box marginTop="4px">
           <LucideArrowRight size="1rem" />
         </Box>

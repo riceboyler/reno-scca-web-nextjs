@@ -1,5 +1,5 @@
 export type QuickLinkModel = {
-  ID: number,
+  ID: number;
   LinkText: string;
   Link: string;
 };

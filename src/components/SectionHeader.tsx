@@ -18,8 +18,7 @@ export const SectionHeader = ({ children }: Props) => {
       textAlign="center"
       padding="2"
       border="outline"
-      borderWidth="0 2px 2px 0"
-    >
+      borderWidth="0 2px 2px 0">
       {children}
     </Box>
   );

@@ -18,10 +18,9 @@ export function ColorSchemeToggle() {
       size="lg"
       aria-label="Toggle color scheme"
       css={{
-        color: 'fg.muted',
-        _hover: { color: 'fg.default' }
-      }}
-    >
+        color: "fg.muted",
+        _hover: { color: "fg.default" },
+      }}>
       {theme === "light" ? <Sun size={20} /> : <Moon size={20} />}
     </IconButton>
   );

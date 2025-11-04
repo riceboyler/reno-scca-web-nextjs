@@ -24,11 +24,8 @@ export const EventBlock = ({ type, events }: Props) => {
         fontFamily="header"
         fontSize="3xl"
         color="fg.default"
-        textAlign="center"
-      >
-        <Link href={`#${type}`}>
-          {type}
-        </Link>
+        textAlign="center">
+        <Link href={`#${type}`}>{type}</Link>
       </Box>
       <Box padding="2">
         {programEvents.length === 0 ? (
@@ -47,12 +44,13 @@ export const EventBlock = ({ type, events }: Props) => {
                   <PandaLink
                     color="indigo.10"
                     _hover={{
-                      color: 'indigo.12'
+                      color: "indigo.12",
                     }}
                     asChild>
                     <Link
                       target="_blank"
-                      rel="noopener noreferrer" href={event.Link}>
+                      rel="noopener noreferrer"
+                      href={event.Link}>
                       More Info
                     </Link>
                   </PandaLink>

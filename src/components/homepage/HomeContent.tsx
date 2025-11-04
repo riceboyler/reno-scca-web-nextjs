@@ -12,7 +12,9 @@ export const HomeContent = ({ homeContent }: Props) => {
   return (
     <Box width="100%">
       <SectionHeader>General Info</SectionHeader>
-      <Box margin="16px auto" maxWidth="400px">
+      <Box
+        margin="16px auto"
+        maxWidth="400px">
         <Image
           src={Logo}
           alt="Reno SCCA Logo"

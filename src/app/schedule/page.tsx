@@ -23,8 +23,13 @@ const SchedulePage = async () => {
     <>
       <SectionHeader>Schedule (upcoming events)</SectionHeader>
       {upcomingEvents?.length === 0 && (
-        <Box fontFamily="body" fontSize={{ base: "2xl", md: "4xl" }} textAlign="center" my="8">
-          There are currently no upcoming events scheduled. Please check back closer to the start of the season (late February/early March).
+        <Box
+          fontFamily="body"
+          fontSize={{ base: "2xl", md: "4xl" }}
+          textAlign="center"
+          my="8">
+          There are currently no upcoming events scheduled. Please check back
+          closer to the start of the season (late February/early March).
         </Box>
       )}
       {upcomingEvents?.map((event) => {
@@ -77,21 +82,22 @@ const SchedulePage = async () => {
                 gradientTo="indigo.3"
                 padding="2">
                 <Box fontFamily="header">{event.Program}</Box>
-                <Box>
-                  {dayjs(event.Date).format("M/DD/YYYY")}
-                </Box>
+                <Box>{dayjs(event.Date).format("M/DD/YYYY")}</Box>
               </HStack>
               <Box
                 fontFamily="body"
                 fontSize={{ base: "md", md: "2xl" }}
-                textAlign="left"
-              >
+                textAlign="left">
                 {event.Name} - Event held at {event.Location}
               </Box>
               {event.Link && (
                 <Box>
-                  <PandaLink asChild fontSize={{ base: "sm", md: "xl" }}>
-                    <Link href={event.Link}>Register at MotorsportReg by clicking here</Link>
+                  <PandaLink
+                    asChild
+                    fontSize={{ base: "sm", md: "xl" }}>
+                    <Link href={event.Link}>
+                      Register at MotorsportReg by clicking here
+                    </Link>
                   </PandaLink>
                 </Box>
               )}
