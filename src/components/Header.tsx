@@ -48,7 +48,7 @@ export const Header = () => {
           <LightDarkLogo />
         </Link>
         <NavbarLink
-          href="/events"
+          href="/program"
           text="Our Events"
         />
         <NavbarLink
