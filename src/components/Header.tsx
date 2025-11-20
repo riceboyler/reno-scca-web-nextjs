@@ -37,7 +37,7 @@ export const Header = () => {
           text="Results"
         />
         <NavbarLink
-          href="/rules"
+          href="/documents/rules"
           text="Cars & Rules"
         />
         <NavbarLink
