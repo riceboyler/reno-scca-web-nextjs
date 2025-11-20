@@ -13,7 +13,7 @@ const getDocuments = async () => {
   if (response?.ok) {
     return await response.json();
   }
-  throw new Error("Error while fetching documents");
+  // throw new Error("Error while fetching documents");
 };
 
 const tabOpts = [
@@ -24,7 +24,7 @@ const tabOpts = [
 ];
 
 const DocumentsPage = async () => {
-  const allDocs: DocumentModel[] = await getDocuments();
+  const allDocs: DocumentModel[] = (await getDocuments()) ?? [];
   return (
     <Stack gap="8">
       <SectionHeader>Documents</SectionHeader>

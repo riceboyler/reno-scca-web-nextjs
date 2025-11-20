@@ -1,23 +1,23 @@
-import Link from "next/link";
-import { Center, Stack } from "styled-system/jsx";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SubHeader } from "@/components/SubHeader";
 import { PandaLink } from "@/components/ui/link";
 import type { RulesModel } from "@/db/models/Rules.model";
 import { getApiUrl } from "@/helpers/apiUrl";
+import Link from "next/link";
+import { Center, Stack } from "styled-system/jsx";
 
 const apiUrl = getApiUrl();
 
 const getRules = async () => {
   const response = await fetch(`${apiUrl}api/documents/rules`);
-  if (response) {
+  if (response?.ok) {
     return await response.json();
   }
-  throw new Error("Error while fetching rules");
+  // throw new Error("Error while fetching rules");
 };
 
 const RulesPage = async () => {
-  const rules: RulesModel[] = await getRules();
+  const rules: RulesModel[] = (await getRules()) ?? [];
 
   const rulePrograms = rules.reduce((acc: string[], curr) => {
     if (!acc.find((pgm) => pgm === curr.Program)) {

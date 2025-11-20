@@ -1,6 +1,6 @@
+import { NextResponse } from "next/server";
 import { getConnection } from "@/db/db";
 import type { DocumentModel } from "@/db/models/Document.model";
-import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
