@@ -3,6 +3,7 @@
 :root {
   --background: var(--colors-indigo-3);
   --foreground: var(--colors-indigo-12);
+  --dark-transparent: rgba(0, 0, 0, .1);
 }
 
 html {
