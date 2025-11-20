@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { Center, Stack } from "styled-system/jsx";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SubHeader } from "@/components/SubHeader";
 import { PandaLink } from "@/components/ui/link";
@@ -5,8 +7,6 @@ import { Table } from "@/components/ui/table";
 import { Tabs } from "@/components/ui/tabs";
 import type { DocumentModel } from "@/db/models/Document.model";
 import { getApiUrl } from "@/helpers/apiUrl";
-import Link from "next/link";
-import { Center, Stack } from "styled-system/jsx";
 
 const getDocuments = async () => {
   const response = await fetch(`${getApiUrl()}api/documents`);
