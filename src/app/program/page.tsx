@@ -1,9 +1,9 @@
+import { Box, Center, Stack } from "styled-system/jsx";
 import { SectionHeader } from "@/components/SectionHeader";
 import { SubHeader } from "@/components/SubHeader";
 import { Tabs } from "@/components/ui/tabs";
 import type { ProgramPageModel } from "@/db/models/ProgramPage.model";
 import { getApiUrl } from "@/helpers/apiUrl";
-import { Box, Center, Stack } from "styled-system/jsx";
 
 const getProgramPages = async () => {
   const response = await fetch(`${getApiUrl()}api/homePrograms`);
