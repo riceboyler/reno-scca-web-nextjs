@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Box, HStack, VStack } from "styled-system/jsx";
 import { SectionHeader } from "@/components/SectionHeader";
+import { SubHeader } from "@/components/SubHeader";
 import { PandaLink } from "@/components/ui/link";
 import type { ScheduledEventModel } from "@/db/models/ScheduledEvent.model";
 import { getApiUrl } from "@/helpers/apiUrl";
@@ -76,19 +77,10 @@ const SchedulePage = async () => {
               alignItems="flex-start"
               width="100%"
             >
-              <HStack
-                width="100%"
-                justifyContent="space-between"
-                fontFamily="header"
-                fontSize={{ base: "2xl", md: "4xl" }}
-                backgroundGradient="to-b"
-                gradientFrom="indigo.6"
-                gradientTo="indigo.3"
-                padding="2"
-              >
+              <SubHeader>
                 <Box fontFamily="header">{event.Program}</Box>
                 <Box>{dayjs(event.Date).format("M/DD/YYYY")}</Box>
-              </HStack>
+              </SubHeader>
               <Box
                 fontFamily="body"
                 fontSize={{ base: "md", md: "2xl" }}

@@ -37,11 +37,11 @@ export const Header = () => {
           text="Results"
         />
         <NavbarLink
-          href="/rules"
+          href="/documents/rules"
           text="Cars & Rules"
         />
         <NavbarLink
-          href="/docs"
+          href="/documents"
           text="Club Docs"
         />
         <Link href="/">
