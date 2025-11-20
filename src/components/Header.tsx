@@ -1,14 +1,14 @@
 "use client";
+import { ColorSchemeToggle } from "@/components/ColorSchemeToggle";
+import { LightDarkLogo } from "@/components/LightDarkLogo";
+import { NavbarLink } from "@/components/NavbarLink";
+import { IconButton } from "@/components/ui";
 import { Portal } from "@ark-ui/react";
 import { Menu as MenuIcon, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Stack } from "styled-system/jsx";
-import { ColorSchemeToggle } from "@/components/ColorSchemeToggle";
-import { LightDarkLogo } from "@/components/LightDarkLogo";
-import { NavbarLink } from "@/components/NavbarLink";
-import { IconButton } from "@/components/ui";
 import { Menu } from "./Menu";
 
 export const Header = () => {
@@ -41,7 +41,7 @@ export const Header = () => {
           text="Cars & Rules"
         />
         <NavbarLink
-          href="/docs"
+          href="/documents"
           text="Club Docs"
         />
         <Link href="/">
