@@ -3,5 +3,5 @@ export type RulesModel = {
   LinkText: string;
   Path: string;
   Sort: number;
-  Program: 'Solo' | 'Track';
+  Program: "Solo" | "Track";
 };

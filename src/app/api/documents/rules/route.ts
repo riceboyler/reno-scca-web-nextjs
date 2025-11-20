@@ -1,6 +1,6 @@
+import { NextResponse } from "next/server";
 import { getConnection } from "@/db/db";
 import type { RulesModel } from "@/db/models/Rules.model";
-import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
