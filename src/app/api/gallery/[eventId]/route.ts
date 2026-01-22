@@ -1,8 +1,8 @@
+import { NextResponse } from "next/server";
 import { getConnection } from "@/db/db";
 import type { GalleryModel } from "@/db/models/Gallery.model";
-import { NextResponse } from "next/server";
 
-export async function GET(_req: Request, ctx: RouteContext<'/api/gallery/[eventId]'>) {
+export async function GET(_req: Request, ctx: RouteContext<"/api/gallery/[eventId]">) {
   const { eventId } = await ctx.params;
   try {
     const pool = await getConnection();
